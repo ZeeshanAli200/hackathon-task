@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-storage.js"></script>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body onload="getcountry()">
+
+
+
+  <div class="container">
+    <h1>Register</h1>
+    <hr>
+    <div class="row  ">
+      <div class="col-12 d-flex justify-content-center">
+        <div class="form-group">
+          <input onchange="restaubtnClick()" checked class="form-check-input" type="radio" value="restaurant"
+            name="userRole" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Restaurant
+          </label>
+        </div>
+        <div class="form-group mx-2">
+          <input onchange="restaubtnClick()" class="form-check-input" value="user" type="radio" name="userRole"
+            id="flexRadioDefault2">
+          <label class="form-check-label" for="flexRadioDefault2">
+            User
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+      </div>
+      <!-- for Restaurant -->
+      <div class="col-lg-12" id="userNameDiv">
+
+        <label for="Username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="Username" id="username" required>
+      </div>
+
+
+      <!-- for User -->
+      <div class="col-lg-12" id="restNameDiv">
+
+        <label for="restaurant"><b>Restaurant Name</b></label>
+        <input type="text" placeholder="Enter Restaurant Name" name="Restaurant" id="restaurant" required>
+      </div>
+      <div class="col-lg-12" id="phoneDiv">
+
+        <label for="phoneNum"><b>Phone Number</b></label>
+        <div class="form-outline">
+          <input type="number" id="typeNumber" class="form-control" />
+
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+
+      </div>
+      <div class="col-lg-12">
+
+
+      </div>
+      <div class="col-lg-12">
+        <div class="row">
+
+
+          <div class="col-lg-6">
+            <label for="" class="mb-1">Country Name:</label>
+            <select onchange="getcountry()" id="countrySelect" class="form-select" aria-label="Default select example">
+              <option value="pakistan" selected>pakistan</option>
+              <option value="india">india</option>
+              <option value="bangladesh">bangladesh</option>
+              <option value="china">china</option>
+            </select>
+          </div>
+          <div class="col-lg-6 dropdown mb-2">
+            <label for="" class="mb-1">City Name:</label>
+            <select id="citySelect" class="form-select" aria-label="Default select example">
+
+              <option value="karachi" selected>karachi</option>
+              <option value="islamabad">islamabad</option>
+              <option value="lahore">lahore</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <div class="col-lg-12">
+        <button class="registerbtn" onclick="register()">Register</button>
+
+      </div>
+      <div class="col-lg-12">
+        <div class="container signin">
+          <p>Already Have An Account <a href="login.html">Login </a> Here</p>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <script src="../app.js"></script>
+</body>
+
+</html>
